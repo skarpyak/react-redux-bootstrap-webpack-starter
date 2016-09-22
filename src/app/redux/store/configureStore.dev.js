@@ -14,7 +14,7 @@ const loggerMiddleware = createLogger({
 
 // createStore : enhancer
 const enhancer = compose(
-  applyMiddleware(thunkMiddleware, loggerMiddleware) // logger after thunk to avoid undefined actions
+  applyMiddleware(thunkMiddleware, loggerMiddleware), // logger after thunk to avoid undefined actions
   persistState(getDebugSessionKey()),
   DevTools.instrument()
 );
